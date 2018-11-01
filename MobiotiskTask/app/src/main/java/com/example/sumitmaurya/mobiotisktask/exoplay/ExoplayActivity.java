@@ -87,7 +87,7 @@ public class ExoplayActivity extends AppCompatActivity implements ItemClickListe
                 setToolbarTitle(videoTitle);
                 exoPresenter.initExoplayer(ExoplayActivity.this, exoPlayerView, videoURL, resumeList);
             }
-        }, 1000);
+        }, 3000);
 
         setupList("");
 
