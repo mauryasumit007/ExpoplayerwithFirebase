@@ -29,7 +29,7 @@ public class HomePresenter implements HomeContractorInterface.MainPresenterInter
         {
 
 
-            viewInterface.displayWikidata(wikiresponse);
+            viewInterface.displayVideodata(wikiresponse);
 
         }
     }
