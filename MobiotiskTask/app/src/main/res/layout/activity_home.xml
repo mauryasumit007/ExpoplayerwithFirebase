@@ -29,7 +29,7 @@
             android:layout_gravity="center"/>
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerViewWiki"
+            android:id="@+id/recyclerViewVideos"
             android:background="#ffffff"
             android:layout_width="match_parent"
             android:visibility="gone"
