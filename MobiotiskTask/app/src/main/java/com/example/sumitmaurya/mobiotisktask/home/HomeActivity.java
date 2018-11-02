@@ -26,8 +26,8 @@ import butterknife.ButterKnife;
 
 public class HomeActivity extends AppCompatActivity implements HomeContractorInterface.MainViewInterface,ItemClickListener{
 
-    @BindView(R.id.recyclerViewWiki)
-    RecyclerView recyclerViewWiki;
+    @BindView(R.id.recyclerViewVideos)
+    RecyclerView recyclerViewVideos;
 
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
@@ -65,7 +65,7 @@ public class HomeActivity extends AppCompatActivity implements HomeContractorInt
     }
     private void setupViews() {
         setSupportActionBar(toolbar);
-        recyclerViewWiki.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewVideos.setLayoutManager(new LinearLayoutManager(this));
 
     }
 
@@ -77,7 +77,7 @@ public class HomeActivity extends AppCompatActivity implements HomeContractorInt
 
     @Override
     public void showProgressBar() {
-        recyclerViewWiki.setVisibility(View.GONE);
+        recyclerViewVideos.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
         label.setVisibility(View.VISIBLE);
 
@@ -87,12 +87,12 @@ public class HomeActivity extends AppCompatActivity implements HomeContractorInt
     public void hideProgressBar() {
         label.setVisibility(View.GONE);
         progressBar.setVisibility(View.GONE);
-        recyclerViewWiki.setVisibility(View.VISIBLE);
+        recyclerViewVideos.setVisibility(View.VISIBLE);
 
     }
 
     @Override
-    public void displayWikidata(List<Output> response) {
+    public void displayVideodata(List<Output> response) {
         if(response!=null ) {
 
             hideProgressBar();
@@ -101,13 +101,13 @@ public class HomeActivity extends AppCompatActivity implements HomeContractorInt
 
             MobiosticApp.getInstance().setSingletonResponse(response);
             homeAdapter = new HomeAdapter(response, HomeActivity.this);
-            recyclerViewWiki.setAdapter(homeAdapter);
+            recyclerViewVideos.setAdapter(homeAdapter);
             homeAdapter.setClickListener(this);
 
         }else{
             showProgressBar();
             Log.d(TAG,"No response");
-            Toast.makeText(HomeActivity.this,"This content not available on Wikipedia",Toast.LENGTH_SHORT).show();
+            Toast.makeText(HomeActivity.this,"This content not available",Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -127,3 +127,4 @@ public class HomeActivity extends AppCompatActivity implements HomeContractorInt
 
     }
 }
+
