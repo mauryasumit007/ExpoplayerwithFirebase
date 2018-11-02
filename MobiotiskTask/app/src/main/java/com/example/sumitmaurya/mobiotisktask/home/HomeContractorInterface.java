@@ -37,7 +37,7 @@ public interface HomeContractorInterface {
         void showToast(String s);
         void showProgressBar();
         void hideProgressBar();
-        void displayWikidata(List<Output> response);
+        void displayVideodata(List<Output> response);
         void displayError(String s);
     }
 
